@@ -14,35 +14,46 @@
     <!-- favicon -->
     <link rel="icon" href="favicon-car.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon-car.ico" type="image/x-icon" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 
 <body>
     <div id="navigation">
         <div class="logo">
             <a href="#home" class="menuitem">
-                <p>PANOWIE Z WARSZTATU</p>
+                <p><i class="fa fa-car" aria-hidden="true"></i> PZW</p>
             </a>
         </div>
         <div id="menu">
             <a href="#blacharstwo" class="menuitem">BLACHARSTWO</a>
             <a href="#lakiernictwo" class="menuitem">LAKIERNICTWO</a>
-            <!-- <a href="" class="menuitem">REALIZACJE</a> -->
-            <a href="#kontakt" class="menuitem">KONTAKT</a>
-            <a href="" class="menuitem facebook">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
+            <a href="#mechanika" class="menuitem">MECHANIKA POJAZDOWA</a>
+            <a href="#kontakt" class="menuitem" style="font-weight: bold">KONTAKT</a>
+            <a href="" class="menuitem facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
         </div>
     </div>
-    <div class="parallax content"></div>
+    <div id="home" class="parallax">
+        <div class="centered-text">
+            <p><i class="fa fa-cog" aria-hidden="true"></i> PANOWIE Z WARSZTATU</p>
+        </div>
+    </div>
     <div class="services">
         <h1>NASZE USŁUGI</h1>
-        <div class="blacharstwo">
+        <div id="introduction">
+            <p>Panowie z warsztatu prezentują swoje usługi dostępne dla Państwa przy ul. Kościuszki we Wrocławiu.</br>
+                Serdecznie zapraszamy do skorzystania z usług <a href="#blacharstwo" class="menuitem"><b>blacharstwa</b></a>, <a href="#lakiernictwo" class="menuitem"><b>lakiernictwa</b></a>, oraz <a href="#mechanika" class="menuitem"><b>mechaniki pojazdowej</b></a>.</br>
+                <a href="#kontakt" class="menuitem" style="font-weight: bold"><b>Skontaktuj się</b></a> już teraz i poznaj szczegóły!</p>
+        </div>
+        <div id="blacharstwo" class="section">
             <h2>Blacharstwo</h2>
+            <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
             <div class="wrapper">
                 <div class="box service mig-mag">
+                    <!-- <div class="icon"><i class="fa fa-wrench" aria-hidden="true"></i></div> -->
                     <h3>Metoda MIG / MAG</h3>
                     <p>Maecenas tristique efficitur nisl eu pharetra. Etiam non tellus quis magna aliquet pellentesque nec a diam. Praesent risus turpis, pellentesque ut diam pretium, luctus finibus lorem. Aenean congue tincidunt augue ac vulputate. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus pharetra nisl, vitae feugiat turpis suscipit non. Pellentesque interdum risus nunc, scelerisque pulvinar urna rutrum nec. Nullam sollicitudin pretium condimentum.</p>
+                        ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum risus nunc, scelerisque pulvinar urna rutrum nec. Nullam sollicitudin pretium condimentum.</p>
                 </div>
                 <div class="box service tig">
                     <h3>Metoda TIG</h3>
@@ -50,6 +61,7 @@
                         metus ac ultricies ultricies. </p>
                 </div>
                 <div class="box service mma">
+                    <!-- <div class="icon"><i class="fa fa-car" aria-hidden="true"></i></div> -->
                     <h3>Metoda MMA</h3>
                     <p>Phasellus dignissim pulvinar est at interdum. Suspendisse laoreet sem at sapien maximus, non egestas massa tempor. In egestas laoreet diam. Quisque volutpat libero nec risus eleifend, ac mattis est laoreet.</p>
                 </div>
@@ -67,13 +79,13 @@
         </div>
 
     </div>
-    <div class="parallax transparent-1">
+    <div id="picture-1" class="parallax">
         <div style="height:500px;">
         </div>
     </div>
     <div class="parallax">
         <div class="services">
-            <div class="lakiernictwo">
+            <div id="lakiernictwo" class="section">
                 <h2>Lakiernictwo</h2>
                 <div class="wrapper">
                     <div class="box service">
@@ -98,15 +110,63 @@
                     <img src="./assets/lakiernictwo/IMG_7911.JPG" alt="">
                 </div>
             </div>
+            <div id="mechanika" class="section">
+                <h2>Mechanika pojazdowa</h2>
+                <div class="wrapper">
+                    <div class="box service">
+                        <h3>Morbi sit amet vestibulum</h3>
+                        <p>Praesent eu gravida ipsum. Pellentesque pulvinar tellus sed mi venenatis, non porta diam ornare. Vivamus lacus risus, laoreet vitae erat et, aliquet porta elit.</p>
+                        <p>Nunc pretium tellus sed nulla viverra luctus. Praesent eget lacinia arcu, et efficitur lorem. Integer eget elit auctor, finibus tellus ullamcorper, lacinia ipsum.
+                        </p>
+                    </div>
+                    <div class="box service">
+                        <h3>Integer eget elit auctor</h3>
+                        <p>Donec a purus sed mauris pharetra consequat vitae in velit. Integer eget elit auctor, finibus tellus ullamcorper, lacinia ipsum. </p>
+                        <p>Morbi massa purus, mollis quis tempus vel, porta eget purus. Morbi ac cursus lacus, vitae tempus neque.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="parallax transparent-2">
+        <div id="picture-2" class="parallax">
             <div style="height:500px;">
             </div>
         </div>
-        <div class="parallax contact">
+        <div id="kontakt" class="parallax contact section">
             <h1>KONTAKT</h1>
+            <div class="address">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <p>ul. Kościuszki 124a</br>Wrocław 50-439</p>
+            </div>
+            <div class="phones wrapper">
+                <div class="box contact-section">
+                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                    <h3>Lakiernictwo</h3>
+                    <p class="phone">123 456 789</p>
+                </div>
+                <div class="box contact-section">
+                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                    <h3>Blacharstwo </br>i mechanika</h3>
+                    <p class="phone">987 654 321</p>
+                </div>
+            </div>
+            <div class="email">
+                <i class="fa fa-at" aria-hidden="true"></i>
+                <p>example@email.com</p>
+            </div>
         </div>
     </div>
 </body>
+<script>
+    //smooth scrolling
+    $('a[href*="#"]').click(function(event) {
+        var target = $(this.hash);
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000, function() {});
+        }
+    });
+</script>
 
 </html>

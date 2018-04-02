@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    /* border: black solid 1px; */
 }
 
 body,
@@ -9,6 +10,18 @@ html {
     /* default font */
     font-family: 'Open Sans', sans-serif;
     color: #4d4d4d;
+}
+
+
+/* a */
+
+a {
+    color: #4d4d4d;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cc0000;
 }
 
 
@@ -45,15 +58,18 @@ h3 {
     margin-left: 50px;
 }
 
+#navigation>.logo i {
+    color: #cc0000;
+}
+
 #navigation a {
     color: white;
-    text-decoration: none;
 }
 
 #menu {
     position: relative;
     float: right;
-    margin-right: 100px;
+    padding-right: 100px;
 }
 
 #menu a {
@@ -65,15 +81,9 @@ h3 {
     background-color: black;
 }
 
-#menu a.facebook {
-    padding: 2px 0px 0px 16px;
-    margin: 0 10px;
-    text-align: center;
-}
-
 #menu a.facebook:hover {
-    color: white;
-    background-color: #3b5998;
+    color: #3b5998;
+    background-color: transparent;
 }
 
 
@@ -92,16 +102,23 @@ h3 {
 
 /* background */
 
-.content {
+#home {
     background-image: url('../assets/background_001.jpg');
 }
 
-.transparent-1 {
+#picture-1 {
     background-image: url('../assets/background_002.jpg');
 }
 
-.transparent-2 {
+#picture-2 {
     background-image: url('../assets/background_003.jpg');
+}
+
+
+/* sections */
+
+.section {
+    padding-top: 2em;
 }
 
 
@@ -113,11 +130,13 @@ h3 {
     grid-gap: 10px;
 }
 
-.wrapper .blacharstwo {
+.wrapper #blacharstwo,
+.wrapper #kontakt {
     grid-template-columns: repeat(2, [col] 1fr);
 }
 
-.wrapper .lakiernictwo {
+.wrapper #lakiernictwo,
+.wrapper #mechanika {
     grid-template-columns: repeat(3, [col] 1fr);
 }
 
@@ -131,14 +150,43 @@ h3 {
 }
 
 
+/* home */
+
+.centered-text {
+    color: white;
+    position: absolute;
+    z-index: 15;
+    top: 27%;
+    left: 17%;
+    font-size: 4em;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.centered-text i {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
 /* services */
 
-.services {
+.services,
+.contact-section {
     padding: 0 5em;
+}
+
+#introduction {
+    font-size: 120%;
+    text-align: center;
+    margin-bottom: 2em;
 }
 
 
 /* service */
+
+.icon {
+    text-align: center;
+    font-size: 1.5em;
+}
 
 .service p {
     text-align: justify;
@@ -160,4 +208,40 @@ h3 {
     grid-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
     margin-bottom: 3em;
+}
+
+
+/* contact */
+
+.contact {
+    text-align: center;
+    font-size: 1.5em;
+    position: relative;
+}
+
+.contact-section {
+    position: relative;
+    width: 200px;
+    padding: 1.2em;
+}
+
+.contact-section i {
+    font-size: 1.5em;
+}
+
+.contact h3 {
+    font-size: 100%;
+}
+
+.phones {
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+}
+
+.phone {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
