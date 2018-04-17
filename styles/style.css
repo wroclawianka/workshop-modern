@@ -51,14 +51,14 @@ h3 {
     font-family: 'Rajdhani', sans-serif;
 }
 
-#navigation>.logo {
+#navigation>.nav-logo {
     position: relative;
     float: left;
     font-weight: bold;
     margin-left: 50px;
 }
 
-#navigation>.logo i {
+#navigation>.nav-logo i {
     color: #cc0000;
 }
 
@@ -92,7 +92,7 @@ h3 {
 .parallax {
     /* Full height */
     height: 100%;
-    /* Create the parallax scrolling effect */
+    /* The parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -103,15 +103,23 @@ h3 {
 /* background */
 
 #home {
-    background-image: url('../assets/background_001.jpg');
+    background-image: url('../assets/backgrounds/metal.jpg');
 }
 
 #picture-1 {
-    background-image: url('../assets/background_002.jpg');
+    background-image: url('../assets/backgrounds/car-yellow.jpg');
+    height: 80%;
 }
 
 #picture-2 {
-    background-image: url('../assets/background_003.jpg');
+    background-image: url('../assets/backgrounds/cockpit.jpg');
+    height: 60%;
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 
@@ -124,20 +132,21 @@ h3 {
 
 /* content grid */
 
+.wrapper>* {
+    border: 1px solid black;
+}
+
 .wrapper {
     display: grid;
-    grid-template-rows: repeat(2, [row] auto);
+    grid-template-rows: repeat(1, [row] 1fr);
     grid-gap: 10px;
 }
 
-.wrapper #blacharstwo,
-.wrapper #kontakt {
-    grid-template-columns: repeat(2, [col] 1fr);
-}
-
-.wrapper #lakiernictwo,
-.wrapper #mechanika {
-    grid-template-columns: repeat(3, [col] 1fr);
+.wrapper #first-content,
+.wrapper #second-content,
+.wrapper #contakt,
+{
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .box {
@@ -149,21 +158,39 @@ h3 {
     padding: 1em;
 }
 
+.box>p {
+    padding: 10px 0;
+}
+
+.box>ul {
+    padding: 10px 20px;
+}
+
+.emphasis {
+    font-size: 1.07em;
+    font-weight: bolder;
+}
+
 
 /* home */
 
-.centered-text {
-    color: white;
-    position: absolute;
-    z-index: 15;
-    top: 27%;
-    left: 17%;
-    font-size: 4em;
-    font-family: 'Rajdhani', sans-serif;
+.home {
+    position: relative;
 }
 
-.centered-text i {
-    color: rgba(0, 0, 0, 0.4);
+
+/* home - logo */
+
+#home>.logo {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#home>.logo>img {
+    height: 35em;
 }
 
 
