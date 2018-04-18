@@ -132,27 +132,48 @@ h3 {
 
 /* content grid */
 
-.wrapper>* {
-    border: 1px solid black;
-}
-
 .wrapper {
     display: grid;
-    grid-template-rows: repeat(1, [row] 1fr);
     grid-gap: 10px;
 }
 
-.wrapper #first-content,
-.wrapper #second-content,
-.wrapper #contakt,
-{
+#first-content .wrapper {
+    grid-template-columns: repeat(2, [row] 1fr);
+}
+
+#second-content .wrapper,
+#contakt .wrapper {
+    grid-template-rows: repeat(2, [row] auto);
     grid-template-columns: repeat(2, 1fr);
 }
 
 .box {
     padding: 1em;
     grid-row: row;
+    transition: 1s;
 }
+
+.box:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* box - special cases */
+
+.long {
+    grid-row: row / span 2;
+}
+
+.short-upper {
+    grid-row: row;
+}
+
+.short-lower {
+    grid-row: row 2;
+}
+
+
+/* box content */
 
 .box h3 {
     padding: 1em;

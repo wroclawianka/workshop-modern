@@ -12,8 +12,8 @@
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- favicon -->
-    <link rel="icon" href="favicon-car.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="favicon-car.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon-wrench.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon-wrench.ico" type="image/x-icon" />
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
@@ -47,14 +47,14 @@
                 Serdecznie zapraszamy do skorzystania z usług
                 <a href="#blacharstwo" class="menuitem"><b>blacharstwa</b></a>,
                 <a href="#renowacja" class="menuitem"><b>renowacji</b></a>,
-                <a href="#lakiernictwo" class="menuitem"><b>lakiernictwa</b></a>, oraz
-                <a href="#mechanika" class="menuitem"><b>mechaniki pojazdowej</b></a>.</br>
+                <a href="#mechanika" class="menuitem"><b>mechaniki pojazdowej</b></a>, oraz
+                <a href="#lakiernictwo" class="menuitem"><b>lakiernictwa</b></a>.</br>
                 <a href="#contakt" class="menuitem" style="font-weight: bold"><b>Skontaktuj się</b></a> już teraz i poznaj szczegóły!</p>
         </div>
         <div id="first-content" class="section">
             <div class="wrapper">
                 <div id="blacharstwo" class="box service">
-                    <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
+                    <!-- <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div> -->
                     <h2>Blacharstwo</h2>
                     <p class="emphasis">Usługi blacharskie to swego rodzaju sztuka, dlatego najlepiej skorzystać ze sprawdzonego warsztatu w którym pracują fachowcy.</p>
                     <p>Realizujemy:
@@ -68,7 +68,7 @@
                     </p>
                 </div>
                 <div id="renowacja" class="box service">
-                    <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
+                    <!-- <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div> -->
                     <h2>Renowacja aut zabytkowych/youngtimer</h2>
                     <p class="emphasis">Nie od dzisiaj wiadomo że klasyczne auta nie tracą na wartości a zakup takiego auta to dobra inwestycja. Nasza ekipa pomoże ci w dopieszczeniu jak i odbudowie twojego wymarzonego auta.</p>
                     <p>Wykonujemy:
@@ -103,10 +103,10 @@
     <div class="parallax">
         <div class="services">
             <div id="second-content" class="section">
-                <h2>Mechanika pojazdowa</h2>
+                <!-- <h2>Mechanika pojazdowa</h2> -->
                 <div class="wrapper">
-                    <div id="mechanika" class="box service">
-                        <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
+                    <div id="mechanika" class="box long service">
+                        <!-- <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div> -->
                         <h2>Mechanika pojazdowa</h2>
                         <p class="emphasis">Prowadzimy warsztat samochodowy, który oferuje rzetelne i skuteczne naprawy samochodów wszystkich marek. Samochody naprawiamy z pasją a nasi doświadczeni mechanicy służą nie tylko swoimi umiejętnościami, ale również fachowymi poradami.</p>
                         <p>Nasza oferta to:
@@ -125,8 +125,8 @@
                             </ul>
                         </p>
                     </div>
-                    <div id="lakiernictwo" class="box service">
-                        <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
+                    <div id="lakiernictwo" class="box short-upper service">
+                        <!-- <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div> -->
                         <h2>Lakiernictwo</h2>
                         <p class="emphasis">Najwyższej jakości naprawy powypadkowe z indywidualnym podejściem. Przy pracach lakierniczych stosujemy podkłady i lakiery wiodących producentów.</p>
                         <ul>
@@ -135,8 +135,8 @@
                         </ul>
                         </p>
                     </div>
-                    <div class="box service">
-                        <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
+                    <div id="inne" class="box short-lower service">
+                        <!-- <div class="icon"><i class="fa fa-cog" aria-hidden="true"></i></div> -->
                         <h2>Inne</h2>
                         <p>U nas wykonasz również następujące usługi:
                             <ul>
@@ -199,7 +199,7 @@
         if (target.length) {
             event.preventDefault();
             $('html, body').animate({
-                scrollTop: target.offset().top
+                scrollTop: target.offset().top - 50
             }, 1000, function() {});
         }
     });
