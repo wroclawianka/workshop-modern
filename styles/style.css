@@ -134,7 +134,9 @@ h3 {
 
 .wrapper {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 2em;
+    margin-bottom: 2em;
+    padding: 0 5em;
 }
 
 #first-content .wrapper {
@@ -217,7 +219,6 @@ h3 {
 
 /* services */
 
-.services,
 .contact-section {
     padding: 0 5em;
 }
@@ -243,19 +244,53 @@ h3 {
 
 /* gallery */
 
+.gallery {
+    height: 15em;
+    margin-bottom: 2em;
+    position: relative;
+}
+
+.scroll-gallery {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .gallery img {
-    padding: 0.1em;
-    margin: 0 2px;
-    object-fit: cover;
-    width: 320px;
-    height: 240px;
+    height: 14em;
+    margin: 0;
+    padding: 0;
 }
 
 .images {
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
-    margin-bottom: 3em;
+    grid-template-columns: repeat(10, auto);
+    grid-template-rows: 1;
+}
+
+
+/* gallery - buttons */
+
+.gallery .buttons {
+    width: 80px;
+    font-size: 2.8em;
+    position: absolute;
+    right: 50%;
+    bottom: 10px;
+    z-index: 15;
+    color: white;
+}
+
+.gallery .arrow {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.gallery .scrollright {
+    float: right;
+}
+
+.gallery .scrollleft {
+    float: left;
 }
 
 

@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="favicon-wrench.ico" type="image/x-icon" />
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 </head>
 
 <body>
@@ -83,12 +84,24 @@
                 </div>
             </div>
             <div class="gallery">
-                <h2>Realizacje</h2>
-                <div class="images">
-                    <img src="./assets/blacharstwo/IMG_7942.JPG" alt="">
-                    <img src="./assets/blacharstwo/IMG_7960.JPG" alt="">
-                    <img src="./assets/blacharstwo/IMG_7965.JPG" alt="">
-                    <img src="./assets/blacharstwo/IMG_8050.JPG" alt="">
+                <div class="scroll-gallery" id="scrollbar">
+                    <!-- <h2>Realizacje</h2> -->
+                    <div class="images">
+                        <img src="./assets/blacharstwo/IMG_7942.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_7960.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_7965.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_8050.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_7942.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_7960.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_7965.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_8050.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_7942.JPG" alt="">
+                        <img src="./assets/blacharstwo/IMG_7960.JPG" alt="">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="arrow scrollright">&gt;</div>
+                    <div class="arrow scrollleft">&lt;</div>
                 </div>
             </div>
 
@@ -152,7 +165,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gallery">
+            <!-- <div class="gallery">
                 <h2>Realizacje</h2>
                 <div class="images">
                     <img src="./assets/lakiernictwo/IMG_7947.JPG" alt="">
@@ -160,7 +173,7 @@
                     <img src="./assets/lakiernictwo/IMG_8058.JPG" alt="">
                     <img src="./assets/lakiernictwo/IMG_7911.JPG" alt="">
                 </div>
-            </div>
+            </div> -->
         </div>
         <div id="picture-2" class="parallax">
             <!-- <div style="height:500px;">
@@ -192,17 +205,6 @@
         </div>
     </div>
 </body>
-<script>
-    //smooth scrolling
-    $('a[href*="#"]').click(function(event) {
-        var target = $(this.hash);
-        if (target.length) {
-            event.preventDefault();
-            $('html, body').animate({
-                scrollTop: target.offset().top - 50
-            }, 1000, function() {});
-        }
-    });
-</script>
+<script src="script.js"></script>
 
 </html>
