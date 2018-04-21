@@ -1,3 +1,19 @@
+$(function() {
+    adjustElementsToWidth();
+});
+
+window.onresize = function(event) {
+    adjustElementsToWidth();
+};
+
+//adjusting elements to width of window
+function adjustElementsToWidth() {
+    let widthOfChange = 760;
+    (window.innerWidth <= widthOfChange) ?
+    ($("body").addClass("short")) :
+    ($("body").removeClass("short"));
+}
+
 //smooth page scrolling
 $('a[href*="#"]').click(function(event) {
     var target = $(this.hash);
@@ -11,8 +27,8 @@ $('a[href*="#"]').click(function(event) {
 
 //gallery scrolling
 function scrollGallery(element, value) {
-    var gallery = $(element).parents(".gallery");
-    var scrollGallery = gallery.children(".scroll-gallery")
+    var gallery = $(element).parents(".gallery"); //var?
+    var scrollGallery = gallery.children(".scroll-gallery") //var?
 
     scrollGallery.animate({
         scrollLeft: value

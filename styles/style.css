@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    /* border: black solid 1px; */
 }
 
 body,
@@ -32,7 +31,7 @@ h2,
 h3 {
     text-align: center;
     padding: 1em;
-    font-size: 1.85em;
+    /* font-size: 1.85em; */
 }
 
 
@@ -48,7 +47,7 @@ h3 {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 4px 0;
     color: white;
-    font-size: 1.3em;
+    /* font-size: 1.3em; */
     font-family: 'Rajdhani', sans-serif;
 }
 
@@ -134,26 +133,46 @@ h3 {
 /* content grid */
 
 .wrapper {
+    overflow: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    /* grid */
     display: grid;
     grid-gap: 2em;
-    margin-bottom: 2em;
-    padding: 0 5em;
 }
 
 #first-content .wrapper {
-    grid-template-columns: repeat(2, [row] 1fr);
+    grid-template-columns: repeat(2, [col] 1fr);
+    grid-template-rows: repeat(2, [row] auto);
+}
+
+body.short #first-content .wrapper {
+    grid-template-columns: repeat(1, [col] 1fr);
+    grid-template-rows: repeat(2, [row] auto);
 }
 
 #second-content .wrapper,
 #contakt .wrapper {
+    grid-template-columns: repeat(2, [col] 1fr);
     grid-template-rows: repeat(2, [row] auto);
-    grid-template-columns: repeat(2, 1fr);
+}
+
+body.short #second-content .wrapper,
+body.short #contakt .wrapper {
+    grid-template-columns: repeat(1, [col] 1fr);
 }
 
 .box {
+    margin: 1em;
     padding: 1em;
-    grid-row: row;
     transition: 1s;
+    width: fit-content;
+}
+
+body.short .box {
+    margin: 0 auto;
+    padding: 0 auto;
 }
 
 .box:hover {
@@ -163,15 +182,18 @@ h3 {
 
 /* box - special cases */
 
-.long {
+
+/* obowiazuja tylko przy wide-dzie */
+
+body:not(.short) .box.long {
     grid-row: row / span 2;
 }
 
-.short-upper {
+body:not(.short) .box.short-upper {
     grid-row: row;
 }
 
-.short-lower {
+body:not(.short) .box.short-lower {
     grid-row: row 2;
 }
 
@@ -191,43 +213,59 @@ h3 {
 }
 
 .emphasis {
-    font-size: 1.07em;
+    /* font-size: 1.07em; */
     font-weight: bolder;
 }
 
 
 /* home */
 
-.home {
-    position: relative;
-}
-
 
 /* home - logo */
 
 #home>.logo {
+    width: 100%;
     margin: 0;
     position: absolute;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+#home>.logo {
+    top: 50%;
+    bottom: 0%;
+}
+
+body.short #home>.logo {
+    top: 50%;
+    bottom: 20%;
+}
+
 #home>.logo>img {
-    height: 35em;
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    /* max-width: 100%; */
 }
 
 
 /* services */
+
+.services {
+    overflow: auto;
+    width: 100%;
+}
 
 .contact-section {
     padding: 0 5em;
 }
 
 #introduction {
-    font-size: 120%;
+    /* font-size: 120%; */
     text-align: center;
     margin-bottom: 2em;
+    padding: 0 0.15em;
 }
 
 
@@ -235,7 +273,7 @@ h3 {
 
 .icon {
     text-align: center;
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
 }
 
 .service p {
@@ -299,7 +337,7 @@ h3 {
 
 .contact {
     text-align: center;
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
     position: relative;
 }
 
@@ -310,11 +348,11 @@ h3 {
 }
 
 .contact-section i {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
 }
 
 .contact h3 {
-    font-size: 100%;
+    /* font-size: 100%; */
 }
 
 .phones {
