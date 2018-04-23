@@ -57,6 +57,14 @@
     #navigation a {
         color: white;
     }
+    
+    #navigation .sub-menu {
+        display: inline;
+    }
+    
+    #navigation .not-displayed {
+        display: none;
+    }
     /* menu */
     
     #menu {
