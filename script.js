@@ -6,6 +6,14 @@ window.onresize = function(event) {
     adjustElementsToWidth();
 };
 
+$('.scrollleft').click(function() {
+    scrollGallery(this, '-=400')
+});
+
+$('.scrollright').click(function() {
+    scrollGallery(this, '+=400')
+});
+
 //adjusting elements to width of window
 function adjustElementsToWidth() {
     let widthOfChange = 760;
@@ -27,18 +35,10 @@ $('a[href*="#"]').click(function(event) {
 
 //gallery scrolling
 function scrollGallery(element, value) {
-    var gallery = $(element).parents(".gallery"); //var?
-    var scrollGallery = gallery.children(".scroll-gallery") //var?
+    var gallery = $(element).parents(".gallery");
+    var scrollGallery = gallery.children(".scroll-gallery");
 
     scrollGallery.animate({
         scrollLeft: value
     }, 500, 'easeOutQuad');
 }
-
-$('.scrollleft').click(function() {
-    scrollGallery(this, '-=400')
-});
-
-$('.scrollright').click(function() {
-    scrollGallery(this, '+=400')
-});
