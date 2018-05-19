@@ -1,0 +1,18 @@
+$font-default: 'Open Sans', sans-serif;
+$padding-default: 1em;
+$margin-default: 1em;
+
+// nav
+$font-nav: 'Rajdhani', sans-serif;
+
+// grid
+$gap-default: 2em;
+$columns-default: repeat(2, [col] 1fr);
+$rows-default: repeat(2, [row] auto);
+
+// effects:
+$transition-default: 1s;
+
+@mixin backgrounds($picture) {
+    background-image: url('../assets/backgrounds/' + $picture);
+}

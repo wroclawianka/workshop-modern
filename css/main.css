@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body,
+html {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  color: #4d4d4d; }
+
+/* basic styles */
+a {
+  color: #4d4d4d;
+  text-decoration: none; }
+  a :hover {
+    color: #cc0000; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+  padding: 1em; }
+
+/* navigation */
+#navigation {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px 0;
+  color: #ffffff;
+  font-family: "Rajdhani", sans-serif;
+  /* menu */ }
+  #navigation .nav-logo {
+    position: relative;
+    float: left;
+    font-weight: bold;
+    margin-left: 50px; }
+    #navigation .nav-logo i {
+      color: #cc0000; }
+  #navigation a {
+    color: #ffffff; }
+  #navigation .sub-menu {
+    display: inline; }
+  #navigation .not-displayed {
+    display: none; }
+  #navigation #menu {
+    position: relative;
+    float: right;
+    padding-right: 100px; }
+    #navigation #menu a {
+      padding: 4px 14px; }
+    #navigation #menu a:hover {
+      color: #cc0000;
+      background-color: #000000; }
+    #navigation #menu a.facebook:hover {
+      color: #3b5998;
+      background-color: transparent; }
+
+/* parallax */
+.parallax {
+  height: 100%;
+  /* the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+/* background */
+#home {
+  background-image: url("../assets/backgrounds/metal.jpg"); }
+
+#services-section {
+  background-image: url("../assets/backgrounds/car-yellow.jpg");
+  height: 75%; }
+
+#contact-section {
+  background-image: url("../assets/backgrounds/car-white.jpg");
+  height: 85%; }
+
+.layer {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+/* section */
+.section {
+  padding-top: 2em; }
+
+/* content grid */
+.wrapper {
+  overflow: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  /* grid */
+  display: grid;
+  grid-gap: 2em; }
+
+#first-content .wrapper {
+  grid-template-columns: repeat(2, [col] 1fr);
+  grid-template-rows: repeat(2, [row] auto); }
+
+#contact .wrapper {
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 1em; }
+
+#second-content .wrapper {
+  grid-template-columns: repeat(2, [col] 1fr);
+  grid-template-rows: repeat(2, [row] auto); }
+
+.box {
+  margin: 1em;
+  padding: 0 1em;
+  transition: 1s; }
+
+/* box - special cases */
+body:not(.short) .box.long {
+  grid-row: row / span 2; }
+
+body:not(.short) .box.short-upper {
+  grid-row: row; }
+
+body:not(.short) .box.short-lower {
+  grid-row: row 2; }
+
+/* box content */
+.box h3 {
+  padding: 1em; }
+
+.box > p {
+  padding: 10px 0; }
+
+.box > ul {
+  padding: 10px 20px; }
+
+/* content */
+.content {
+  overflow: auto;
+  width: 100%; }
+
+/* #home */
+/* #home > .logo */
+#home > .logo {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  bottom: 0%; }
+  #home > .logo > img {
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block; }
+
+#introduction {
+  text-align: center;
+  margin-bottom: 2em;
+  padding: 0 0.15em; }
+
+/* section services */
+/* service */
+.service p {
+  text-align: justify; }
+  .service p .emphasis {
+    font-weight: bolder; }
+
+/* gallery */
+.gallery {
+  height: 15em;
+  margin-bottom: 2em;
+  position: relative; }
+  .gallery img {
+    height: 14em;
+    margin: 0;
+    padding: 0; }
+  .gallery .buttons {
+    width: 80px;
+    font-size: 2.8em;
+    position: absolute;
+    right: 50%;
+    bottom: 10px;
+    z-index: 15;
+    color: white; }
+  .gallery .arrow {
+    cursor: pointer;
+    background-color: transparent; }
+  .gallery .scrollright {
+    float: right; }
+  .gallery .scrollleft {
+    float: left; }
+
+.scroll-gallery {
+  overflow: hidden;
+  white-space: nowrap; }
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  grid-template-rows: 1; }
+
+/* contact */
+#contact .box {
+  text-align: center;
+  width: 70%; }
+
+#contact i {
+  font-size: 1.5em; }
+
+#contact .map {
+  position: absolute;
+  bottom: -50px; }
+
+/* map and footer */
+.footer {
+  text-align: center;
+  padding: 0.25em 0; }
+
+#contact-section {
+  position: relative; }
+  #contact-section .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
