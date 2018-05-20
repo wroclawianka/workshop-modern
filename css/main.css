@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Rajdhani");
 * {
   margin: 0;
   padding: 0; }
@@ -20,8 +21,7 @@ h2,
 h3,
 h4,
 h5 {
-  text-align: center;
-  padding: 1em; }
+  font-family: "Merriweather", serif; }
 
 /* navigation */
 #navigation {
@@ -102,17 +102,75 @@ h5 {
   display: grid;
   grid-gap: 2em; }
 
-#first-content .wrapper {
-  grid-template-columns: repeat(2, [col] 1fr);
-  grid-template-rows: repeat(2, [row] auto); }
+.services .wrapper {
+  grid-template-columns: repeat(1, [col] 1fr);
+  grid-template-rows: repeat(auto-fit, [row] auto);
+  padding: 0 10em; }
+  .services .wrapper .service * {
+    text-align: center; }
+  .services .wrapper .service .header {
+    padding: 0 0 1em 0; }
+    .services .wrapper .service .header > h2,
+    .services .wrapper .service .header h3 {
+      font-size: 240%;
+      font-weight: 100; }
+    .services .wrapper .service .header > h3 {
+      font-size: 140%; }
+  .services .wrapper .service .info {
+    width: 70%; }
+  .services .wrapper .service .detailed-services {
+    padding: 1em 0;
+    display: grid;
+    grid-template-rows: 1;
+    grid-auto-columns: minmax(min-content, 230px);
+    grid-auto-flow: column;
+    justify-content: center;
+    margin: 0 2em; }
+    .services .wrapper .service .detailed-services .item {
+      position: relative;
+      max-height: 90px;
+      line-height: 90px;
+      text-align: center;
+      padding: 0 10px;
+      align-content: center;
+      justify-content: center;
+      position: relative; }
+      .services .wrapper .service .detailed-services .item :after {
+        content: '';
+        position: absolute;
+        height: 50%;
+        bottom: 20%;
+        right: 0;
+        border-right: 1px solid #cccccc; }
+      .services .wrapper .service .detailed-services .item p {
+        color: #666666;
+        font-size: 0.9em;
+        line-height: 1.5;
+        display: inline-block;
+        vertical-align: middle; }
+    .services .wrapper .service .detailed-services .item:nth-child(1) :after {
+      border-left: 1px solid #cccccc;
+      content: '';
+      position: absolute;
+      height: 50%;
+      bottom: 25%;
+      left: 0; }
+  .services .wrapper .service .detailed-services.long {
+    grid-template-columns: repeat(6, minmax(min-content, 230px));
+    grid-template-rows: repeat(2, 1fr); }
+    .services .wrapper .service .detailed-services.long .item.long {
+      grid-column: span 3; }
+    .services .wrapper .service .detailed-services.long .item:nth-child(2) :after {
+      border-left: 1px solid #cccccc;
+      content: '';
+      position: absolute;
+      height: 50%;
+      bottom: 25%;
+      left: 0; }
 
 #contact .wrapper {
   grid-template-columns: repeat(4, 1fr);
   padding-bottom: 1em; }
-
-#second-content .wrapper {
-  grid-template-columns: repeat(2, [col] 1fr);
-  grid-template-rows: repeat(2, [row] auto); }
 
 .box {
   margin: 1em;
@@ -120,25 +178,6 @@ h5 {
   transition: 1s; }
 
 /* box - special cases */
-body:not(.short) .box.long {
-  grid-row: row / span 2; }
-
-body:not(.short) .box.short-upper {
-  grid-row: row; }
-
-body:not(.short) .box.short-lower {
-  grid-row: row 2; }
-
-/* box content */
-.box h3 {
-  padding: 1em; }
-
-.box > p {
-  padding: 10px 0; }
-
-.box > ul {
-  padding: 10px 20px; }
-
 /* content */
 .content {
   overflow: auto;
@@ -160,17 +199,12 @@ body:not(.short) .box.short-lower {
     margin-left: auto;
     display: block; }
 
-#introduction {
+#intro {
   text-align: center;
-  margin-bottom: 2em;
-  padding: 0 0.15em; }
-
-/* section services */
-/* service */
-.service p {
-  text-align: justify; }
-  .service p .emphasis {
-    font-weight: bolder; }
+  padding: 2em 0;
+  width: 100%; }
+  #intro .our-services {
+    width: 50; }
 
 /* gallery */
 .gallery {
