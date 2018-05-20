@@ -11,6 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path scss scss\\main.scss   css\\main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "start": "npm run build-css & browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*, !sass/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\""
   },
   "repository": {
