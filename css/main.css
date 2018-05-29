@@ -102,10 +102,15 @@ h5 {
   display: grid;
   grid-gap: 2em; }
 
+.services {
+  width: 100%;
+  padding-bottom: 2em; }
+
 .services .wrapper {
+  width: 100%;
+  min-width: min-content;
   grid-template-columns: repeat(1, [col] 1fr);
-  grid-template-rows: repeat(auto-fit, [row] auto);
-  padding: 0 10em; }
+  grid-template-rows: repeat(auto-fit, [row] auto); }
   .services .wrapper .service * {
     text-align: center; }
   .services .wrapper .service .header {
@@ -136,12 +141,12 @@ h5 {
       justify-content: center;
       position: relative; }
       .services .wrapper .service .detailed-services .item :after {
+        border-right: 1px solid #cccccc;
         content: '';
         position: absolute;
         height: 50%;
-        bottom: 20%;
-        right: 0;
-        border-right: 1px solid #cccccc; }
+        bottom: 25%;
+        right: 0; }
       .services .wrapper .service .detailed-services .item p {
         color: #666666;
         font-size: 0.9em;
@@ -203,8 +208,6 @@ h5 {
   text-align: center;
   padding: 2em 0;
   width: 100%; }
-  #intro .our-services {
-    width: 50; }
 
 /* gallery */
 .gallery {

@@ -144,10 +144,18 @@ h5 {
     // }
 }
 
+.services{
+    width: 100%;
+    // background: red;
+    padding-bottom: 2*$padding-default;
+}
+
 .services .wrapper {
+    width: 100%;
+    // background: pink;
+    min-width: min-content;
     grid-template-columns: repeat(1, [col] 1fr);
     grid-template-rows: repeat(auto-fit, [row] auto);
-    padding: 0 10em;
     .service {
         * {
             text-align: center;
@@ -175,6 +183,7 @@ h5 {
             justify-content: center;
             margin: 0 2*$margin-default;
             .item {
+                @include box-border(right);
                 position: relative;
                 max-height: 90px;
                 line-height: 90px;
@@ -183,14 +192,6 @@ h5 {
                 align-content: center;
                 justify-content: center;
                 position: relative;
-                 :after {
-                    content: '';
-                    position: absolute;
-                    height: 50%;
-                    bottom: 20%;
-                    right: 0;
-                    border-right: 1px solid $grey-light;
-                }
                 p {
                     color: $grey-medium;
                     font-size: 0.9em;
@@ -282,9 +283,6 @@ h5 {
     text-align: center;
     padding: 2em 0;
     width: 100%;
-    .our-services {
-        width: 50;
-    }
 }
 
 
