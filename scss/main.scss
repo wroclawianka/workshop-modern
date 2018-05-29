@@ -16,7 +16,7 @@
     a {
         color: $grey;
         text-decoration: none;
-         :hover {
+        .accent:hover {
             color: $red;
         }
     }
@@ -36,12 +36,13 @@
         left: 0;
         top: 0;
         width: 100%;
+        height: 27px;
         overflow: auto;
         background-color: $black-transparent;
         padding: 4px 0;
         color: $white;
         font-family: $font-nav;
-        // need a div for this section
+        font-size: 125%;
         .nav-logo {
             position: relative;
             float: left;
@@ -57,24 +58,38 @@
         .sub-menu {
             display: inline;
         }
-        .not-displayed {
-            display: none;
-        }
         /* menu */
         #menu {
             position: relative;
             float: right;
-            padding-right: 100px;
+            color: $white;
             a {
                 padding: 4px 14px;
+                width: 100%;
+                position: relative;
             }
-            a:hover {
-                color: $red;
-                background-color: $black;
+            a:hover:after {
+                background: $red;
+                display: block;
+                content: '';
+                height: 3px;
+                width: calc(100% - 14px);
+                position: absolute;
+                left: 7px;
+                bottom: 3px;
             }
-            a.facebook:hover {
-                color: $blue-facebook;
-                background-color: transparent;
+            a.facebook:hover:after {
+                background: $blue-facebook;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 850px) {
+        #navigation {
+            #menu {
+                .service-items {
+                    display: none;
+                }
             }
         }
     }
