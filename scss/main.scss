@@ -1,387 +1,339 @@
-@import 'variables';
-@import 'colors';
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body,
-html {
-    height: 100%;
-    font-family: $font-default;
-    color: $grey;
-}
-
-
-/* basic styles */
-
-a {
-    color: $grey;
-    text-decoration: none;
-     :hover {
-        color: $red;
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    // text-align: center;
-    // padding: $padding-default;
-    font-family: $font-headers;
-}
-
-
-/* navigation */
-
-#navigation {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    overflow: auto;
-    background-color: $black-transparent;
-    padding: 4px 0;
-    color: $white;
-    font-family: $font-nav;
-    // need a div for this section
-    .nav-logo {
-        position: relative;
-        float: left;
-        font-weight: bold;
-        margin-left: 50px;
-        i {
-            color: $red;
-        }
-    }
-    a {
-        color: $white;
-    }
-    .sub-menu {
-        display: inline;
-    }
-    .not-displayed {
-        display: none;
-    }
-    /* menu */
-    #menu {
-        position: relative;
-        float: right;
-        padding-right: 100px;
-        a {
-            padding: 4px 14px;
-        }
-        a:hover {
-            color: $red;
-            background-color: $black;
-        }
-        a.facebook:hover {
-            color: $blue-facebook;
-            background-color: transparent;
-        }
-    }
-}
-
-
-/* parallax */
-
-.parallax {
-    height: 100%;
-    /* the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-/* background */
-
-#home {
-    @include backgrounds('metal.jpg');
-}
-
-#services-section {
-    @include backgrounds('car-yellow.jpg');
-    height: 75%;
-}
-
-#contact-section {
-    @include backgrounds('car-white.jpg');
-    height: 85%;
-}
-
-// layer
-.layer {
-    height: 100%;
-    width: 100%;
-    background-color: $black-transparent;
-}
-
-
-/* section */
-
-.section {
-    padding-top: 2*$padding-default;
-}
-
-
-/* content grid */
-
-.wrapper {
-    overflow: auto;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 auto;
-    /* grid */
-    display: grid;
-    grid-gap: $gap-default;
-    // * {
-    //     border: 1px solid black;
-    // }
-}
-
-.services{
-    width: 100%;
-    // background: red;
-    padding-bottom: 2*$padding-default;
-}
-
-.services .wrapper {
-    width: 100%;
-    // background: pink;
-    min-width: min-content;
-    grid-template-columns: repeat(1, [col] 1fr);
-    grid-template-rows: repeat(auto-fit, [row] auto);
-    .service {
-        * {
-            text-align: center;
-        }
-        .header {
-            padding: 0 0 $padding-default 0;
-            >h2,
-            h3 {
-                font-size: 240%;
-                font-weight: 100;
-            }
-            >h3 {
-                font-size: 140%;
-            }
-        }
-        .info {
-            width: 70%;
-        }
-        .detailed-services {
-            padding: $padding-default 0;
-            display: grid;
-            grid-template-rows: 1;
-            grid-auto-columns: minmax(min-content, 230px);
-            grid-auto-flow: column;
-            justify-content: center;
-            margin: 0 2*$margin-default;
-            .item {
-                @include box-border(right);
-                position: relative;
-                max-height: 90px;
-                line-height: 90px;
-                text-align: center;
-                padding: 0 10px;
-                align-content: center;
-                justify-content: center;
-                position: relative;
-                p {
-                    color: $grey-medium;
-                    font-size: 0.9em;
-                    line-height: 1.5;
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-            }
-            .item:nth-child(1) {
-                @include box-border(left);
-            }
-        
-        }
-        .detailed-services.long{
-            grid-template-columns: repeat(6, minmax(min-content, 230px));
-            grid-template-rows: repeat(2, 1fr);
-            .item.long{
-                grid-column: span 3;
-            }
-            .item:nth-child(2) {
-                @include box-border(left);
-           }
-        }
-    }
-}
-
-#contact .wrapper {
-    grid-template-columns: repeat(4, 1fr);
-    padding-bottom: $padding-default;
-}
-
-// #second-content .wrapper {
-//     grid-template-columns: $columns-default;
-//     grid-template-rows: $rows-default;
-// }
-.box {
-    margin: $margin-default;
-    padding: 0 $padding-default;
-    transition: $transition-default;
-}
-
-
-/* box - special cases */
-
-// body:not(.short) {
-//     .box.long {
-//         grid-row: row / span 2;
-//     }
-//     .box.short-upper {
-//         grid-row: row;
-//     }
-//     .box.short-lower {
-//         grid-row: row 2;
-//     }
-// }
-
-/* content */
-
-.content {
-    overflow: auto;
-    width: 100%;
-}
-
-
-/* #home */
-
-
-/* #home > .logo */
-
-#home {
-    >.logo {
-        width: 100%;
-        margin: 0;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        bottom: 0%;
-        >img {
-            max-height: 100%;
-            margin-right: auto;
-            margin-left: auto;
-            display: block;
-        }
-    }
-}
-
-#intro {
-    text-align: center;
-    padding: 2em 0;
-    width: 100%;
-}
-
-
-/* gallery */
-
-.gallery {
-    height: 15em;
-    margin-bottom: 2em;
-    position: relative;
-    img {
-        height: 14em;
+    @import 'variables';
+    @import 'colors';
+    * {
         margin: 0;
         padding: 0;
     }
-    // buttons
-    .buttons {
-        width: 80px;
-        font-size: 2.8em;
-        position: absolute;
-        right: 50%;
-        bottom: 10px;
-        z-index: 15;
-        color: white;
+    
+    body,
+    html {
+        height: 100%;
+        font-family: $font-default;
+        color: $grey;
     }
-    .arrow {
-        cursor: pointer;
-        background-color: transparent;
+    /* basic styles */
+    
+    a {
+        color: $grey;
+        text-decoration: none;
+         :hover {
+            color: $red;
+        }
     }
-    .scrollright {
-        float: right;
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: $font-headers;
     }
-    .scrollleft {
-        float: left;
+    /* navigation */
+    
+    #navigation {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        overflow: auto;
+        background-color: $black-transparent;
+        padding: 4px 0;
+        color: $white;
+        font-family: $font-nav;
+        // need a div for this section
+        .nav-logo {
+            position: relative;
+            float: left;
+            font-weight: bold;
+            margin-left: 50px;
+            i {
+                color: $red;
+            }
+        }
+        a {
+            color: $white;
+        }
+        .sub-menu {
+            display: inline;
+        }
+        .not-displayed {
+            display: none;
+        }
+        /* menu */
+        #menu {
+            position: relative;
+            float: right;
+            padding-right: 100px;
+            a {
+                padding: 4px 14px;
+            }
+            a:hover {
+                color: $red;
+                background-color: $black;
+            }
+            a.facebook:hover {
+                color: $blue-facebook;
+                background-color: transparent;
+            }
+        }
     }
-}
-
-.scroll-gallery {
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.images {
-    display: grid;
-    grid-template-columns: repeat(10, auto);
-    grid-template-rows: 1;
-}
-
-
-/* contact */
-
-#contact {
+    /* parallax */
+    
+    .parallax {
+        height: 100%;
+        /* the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /* background */
+    
+    #home {
+        @include backgrounds('metal.jpg');
+    }
+    
+    #services-section {
+        @include backgrounds('car-yellow.jpg');
+        height: 75%;
+    }
+    
+    #contact-section {
+        @include backgrounds('car-white.jpg');
+        height: 85%;
+    }
+    
+    // layer
+    .layer {
+        height: 100%;
+        width: 100%;
+        background-color: $black-transparent;
+    }
+    /* section */
+    
+    .section {
+        padding-top: 2*$padding-default;
+    }
+    /* content grid */
+    
+    .wrapper {
+        overflow: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 auto;
+        /* grid */
+        display: grid;
+        grid-gap: $gap-default;
+    }
+    
+    .services .wrapper {
+        width: 100%;
+        grid-template-columns: repeat(1, [col] 1fr);
+        grid-template-rows: repeat(auto-fit, [row] auto);
+        padding: 2em 0;
+        .service {
+            .header {
+                text-align: center;
+                padding: 0 0 $padding-default 0;
+                >h2,
+                h3 {
+                    font-size: 240%;
+                    font-weight: 100;
+                }
+                >h3 {
+                    font-size: 140%;
+                }
+            }
+            .emphasis {
+                text-align: center;
+                padding: 6px 0;
+            }
+            .detailed-services {
+                padding: $padding-default 0;
+                justify-content: center;
+                margin: 0 2*$margin-default;
+                .item {
+                    p {
+                        text-align: center;
+                        color: $grey-medium;
+                        font-size: 0.8em;
+                        line-height: 1.5;
+                        padding: 6px 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media screen and (min-width: 820px) {
+        .services .wrapper {
+            .service {
+                .detailed-services {
+                    display: grid;
+                    grid-template-rows: 1;
+                    grid-auto-columns: minmax(min-content, 230px);
+                    grid-auto-flow: column;
+                    .item {
+                        @include box-border(right);
+                        line-height: 90px;
+                        position: relative;
+                        max-height: 90px;
+                        text-align: center;
+                        padding: 0 10px;
+                        align-content: center;
+                        justify-content: center;
+                        position: relative;
+                        p {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+                    .item:nth-child(1) {
+                        @include box-border(left);
+                    }
+                }
+            }
+        }
+    }
+    
+    #contact .wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        padding-bottom: $padding-default;
+    }
+    
     .box {
-        text-align: center;
-        width: 70%;
+        margin: $margin-default;
+        padding: 0 $padding-default;
+        transition: $transition-default;
     }
-    i {
-        font-size: 1.5em;
-    }
-    .map {
-        position: absolute;
-        bottom: -50px;
-    }
-}
-
-
-/* map and footer */
-
-.footer {
-    text-align: center;
-    padding: 0.25em 0;
-}
-
-#contact-section {
-    position: relative;
-    .footer {
-        position: absolute;
-        bottom: 0;
+    /* content */
+    
+    .content {
+        overflow: auto;
         width: 100%;
     }
-}
-
-// to do by @media Rule
-// body.short {
-//     #first-content .wrapper {
-//         grid-template-columns: repeat(1, [col] 1fr);
-//         grid-template-rows: $rows-default;
-//     }
-//     #second-content .wrapper {
-//         grid-template-columns: repeat(1, [col] 1fr);
-//     }
-//     #contact .wrapper {
-//         grid-template-columns: repeat(1, 1fr);
-//     }
-//     .box {
-//         margin: 0 auto;
-//         padding: 0 auto;
-//     }
-//     #home>.logo {
-//         top: 50%;
-//         bottom: 20%;
-//     }
-// }
+    /* #home */
+    /* #home > .logo */
+    
+    #home {
+        >.logo {
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            bottom: 0%;
+            >img {
+                max-height: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+            }
+        }
+    }
+    
+    #our-services {
+        text-align: center;
+        padding: 2em 0;
+        width: 100%;
+        p {
+            padding: 6px 0;
+        }
+    }
+    /* gallery */
+    
+    .gallery {
+        height: 15em;
+        margin-bottom: 2em;
+        position: relative;
+        img {
+            height: 14em;
+            margin: 0;
+            padding: 0;
+        }
+        // buttons
+        .buttons {
+            width: 80px;
+            font-size: 2.8em;
+            position: absolute;
+            right: 50%;
+            bottom: 10px;
+            z-index: 15;
+            color: white;
+        }
+        .arrow {
+            cursor: pointer;
+            background-color: transparent;
+        }
+        .scrollright {
+            float: right;
+        }
+        .scrollleft {
+            float: left;
+        }
+    }
+    
+    .scroll-gallery {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    .images {
+        display: grid;
+        grid-template-columns: repeat(10, auto);
+        grid-template-rows: 1;
+    }
+    /* contact */
+    
+    #contact {
+        .box {
+            text-align: center;
+            width: 70%;
+        }
+        i {
+            font-size: 1.5em;
+        }
+        .map {
+            position: absolute;
+            bottom: -50px;
+        }
+    }
+    /* map and footer */
+    
+    .footer {
+        text-align: center;
+        padding: 0.25em 0;
+    }
+    
+    #contact-section {
+        position: relative;
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    
+    // to do by @media Rule
+    // body.short {
+    //     #first-content .wrapper {
+    //         grid-template-columns: repeat(1, [col] 1fr);
+    //         grid-template-rows: $rows-default;
+    //     }
+    //     #second-content .wrapper {
+    //         grid-template-columns: repeat(1, [col] 1fr);
+    //     }
+    //     #contact .wrapper {
+    //         grid-template-columns: repeat(1, 1fr);
+    //     }
+    //     .box {
+    //         margin: 0 auto;
+    //         padding: 0 auto;
+    //     }
+    //     #home>.logo {
+    //         top: 50%;
+    //         bottom: 20%;
+    //     }
+    // }

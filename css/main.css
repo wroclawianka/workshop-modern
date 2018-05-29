@@ -102,18 +102,13 @@ h5 {
   display: grid;
   grid-gap: 2em; }
 
-.services {
-  width: 100%;
-  padding-bottom: 2em; }
-
 .services .wrapper {
   width: 100%;
-  min-width: min-content;
   grid-template-columns: repeat(1, [col] 1fr);
-  grid-template-rows: repeat(auto-fit, [row] auto); }
-  .services .wrapper .service * {
-    text-align: center; }
+  grid-template-rows: repeat(auto-fit, [row] auto);
+  padding: 2em 0; }
   .services .wrapper .service .header {
+    text-align: center;
     padding: 0 0 1em 0; }
     .services .wrapper .service .header > h2,
     .services .wrapper .service .header h3 {
@@ -121,20 +116,30 @@ h5 {
       font-weight: 100; }
     .services .wrapper .service .header > h3 {
       font-size: 140%; }
-  .services .wrapper .service .info {
-    width: 70%; }
+  .services .wrapper .service .emphasis {
+    text-align: center;
+    padding: 6px 0; }
   .services .wrapper .service .detailed-services {
     padding: 1em 0;
+    justify-content: center;
+    margin: 0 2em; }
+    .services .wrapper .service .detailed-services .item p {
+      text-align: center;
+      color: #666666;
+      font-size: 0.8em;
+      line-height: 1.5;
+      padding: 6px 0; }
+
+@media screen and (min-width: 820px) {
+  .services .wrapper .service .detailed-services {
     display: grid;
     grid-template-rows: 1;
     grid-auto-columns: minmax(min-content, 230px);
-    grid-auto-flow: column;
-    justify-content: center;
-    margin: 0 2em; }
+    grid-auto-flow: column; }
     .services .wrapper .service .detailed-services .item {
+      line-height: 90px;
       position: relative;
       max-height: 90px;
-      line-height: 90px;
       text-align: center;
       padding: 0 10px;
       align-content: center;
@@ -148,9 +153,6 @@ h5 {
         bottom: 25%;
         right: 0; }
       .services .wrapper .service .detailed-services .item p {
-        color: #666666;
-        font-size: 0.9em;
-        line-height: 1.5;
         display: inline-block;
         vertical-align: middle; }
     .services .wrapper .service .detailed-services .item:nth-child(1) :after {
@@ -159,19 +161,7 @@ h5 {
       position: absolute;
       height: 50%;
       bottom: 25%;
-      left: 0; }
-  .services .wrapper .service .detailed-services.long {
-    grid-template-columns: repeat(6, minmax(min-content, 230px));
-    grid-template-rows: repeat(2, 1fr); }
-    .services .wrapper .service .detailed-services.long .item.long {
-      grid-column: span 3; }
-    .services .wrapper .service .detailed-services.long .item:nth-child(2) :after {
-      border-left: 1px solid #cccccc;
-      content: '';
-      position: absolute;
-      height: 50%;
-      bottom: 25%;
-      left: 0; }
+      left: 0; } }
 
 #contact .wrapper {
   grid-template-columns: repeat(4, 1fr);
@@ -182,7 +172,6 @@ h5 {
   padding: 0 1em;
   transition: 1s; }
 
-/* box - special cases */
 /* content */
 .content {
   overflow: auto;
@@ -204,10 +193,12 @@ h5 {
     margin-left: auto;
     display: block; }
 
-#intro {
+#our-services {
   text-align: center;
   padding: 2em 0;
   width: 100%; }
+  #our-services p {
+    padding: 6px 0; }
 
 /* gallery */
 .gallery {
