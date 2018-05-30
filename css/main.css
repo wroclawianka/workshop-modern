@@ -108,7 +108,6 @@ h5 {
   overflow: auto;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 auto;
   /* grid */
   display: grid;
   grid-gap: 2em; }
@@ -197,7 +196,8 @@ h5 {
   left: 50%;
   transform: translate(-50%, -50%);
   top: 50%;
-  bottom: 0%; }
+  bottom: 0%;
+  transition: all 1.5s; }
   #home > .logo > img {
     max-height: 100%;
     margin-right: auto;
@@ -206,7 +206,7 @@ h5 {
 
 #our-services {
   text-align: center;
-  padding: 2em 0;
+  padding: 2em 0 0 0;
   width: 100%; }
   #our-services p {
     padding: 6px 0; }
@@ -268,3 +268,13 @@ h5 {
     position: absolute;
     bottom: 0;
     width: 100%; }
+
+@media screen and (max-width: 760px) {
+  #home > .logo {
+    top: 50%;
+    bottom: 20%; }
+  #contact .wrapper {
+    grid-template-columns: repeat(1, 1fr); }
+  #contact .box {
+    margin: 0 auto;
+    padding: 0 auto; } }

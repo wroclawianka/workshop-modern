@@ -1,10 +1,10 @@
-$(function() {
-    adjustBodyToWidth();
-});
+// $(function() {
+//     adjustBodyToWidth();
+// });
 
-window.onresize = function(event) {
-    adjustBodyToWidth();
-};
+// window.onresize = function(event) {
+//     adjustBodyToWidth();
+// };
 
 $('.scrollleft').click(function() {
     scrollGallery(this, '-=400')
@@ -15,9 +15,9 @@ $('.scrollright').click(function() {
 });
 
 //adjusting elements to width of window
-function adjustBodyToWidth() {
-    adjustElementToWidth("body", "short", 760);
-}
+// function adjustBodyToWidth() {
+//     adjustElementToWidth("body", "short", 760);
+// }
 
 //smooth page scrolling
 $('a[href*="#"]').click(function(event) {
