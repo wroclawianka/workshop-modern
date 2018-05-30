@@ -1,0 +1,27 @@
+{
+  "name": "workshop-modern",
+  "version": "1.0.0",
+  "description": "Modern and responsive webpage for a workshop company",
+  "main": "script.js",
+  "dependencies": {
+    "browser-sync": "^2.24.4",
+    "node-sass": "^4.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss\\main.scss   css\\main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "start": "npm run build-css & browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*, !sass/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wroclawianka/workshop-modern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wroclawianka/workshop-modern/issues"
+  },
+  "homepage": "https://github.com/wroclawianka/workshop-modern#readme"
+}

@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Rajdhani");
+* {
+  margin: 0;
+  padding: 0; }
+
+body,
+html {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  color: #4d4d4d; }
+
+/* basic styles */
+a {
+  color: #4d4d4d;
+  text-decoration: none; }
+  a .accent:hover {
+    color: #cc0000; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Merriweather", serif; }
+
+.header {
+  text-align: center;
+  padding: 0 0 1em 0; }
+  .header > h2,
+  .header h3 {
+    font-size: 240%;
+    font-weight: 100; }
+  .header > h3 {
+    font-size: 140%; }
+
+/* navigation */
+#navigation {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 27px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px 0;
+  color: #ffffff;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 125%;
+  /* menu */ }
+  #navigation .nav-logo {
+    position: relative;
+    float: left;
+    font-weight: bold;
+    margin-left: 50px; }
+    #navigation .nav-logo i {
+      color: #cc0000; }
+  #navigation a {
+    color: #ffffff; }
+  #navigation .sub-menu {
+    display: inline; }
+  #navigation #menu {
+    position: relative;
+    float: right;
+    color: #ffffff; }
+    #navigation #menu a {
+      padding: 4px 14px;
+      width: 100%;
+      position: relative; }
+    #navigation #menu a:hover:after {
+      background: #cc0000;
+      display: block;
+      content: '';
+      height: 3px;
+      width: calc(100% - 14px);
+      position: absolute;
+      left: 7px;
+      bottom: 3px; }
+    #navigation #menu a.facebook:hover:after {
+      background: #3b5998; }
+
+@media screen and (max-width: 850px) {
+  #navigation #menu .service-items {
+    display: none; } }
+
+/* parallax */
+.parallax {
+  height: 100%;
+  /* the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+/* background */
+#home {
+  background-image: url("../assets/backgrounds/metal.jpg"); }
+
+#services-section {
+  background-image: url("../assets/backgrounds/car-yellow.jpg");
+  height: 75%; }
+
+#contact-section {
+  background-image: url("../assets/backgrounds/car-white.jpg");
+  height: 85%; }
+
+.layer {
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.layer:hover {
+  background-color: transparent; }
+
+/* section */
+.section {
+  padding-top: 2em; }
+
+/* content grid */
+.wrapper {
+  overflow: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  /* grid */
+  display: grid;
+  grid-gap: 2em; }
+
+.services .wrapper {
+  width: 100%;
+  grid-template-columns: repeat(1, [col] 1fr);
+  grid-template-rows: repeat(auto-fit, [row] auto);
+  padding: 2em 0; }
+  .services .wrapper .service .emphasis {
+    text-align: center;
+    padding: 6px 0; }
+  .services .wrapper .service .detailed-services {
+    padding: 1em 0;
+    justify-content: center;
+    margin: 0 2em; }
+    .services .wrapper .service .detailed-services .item p {
+      text-align: center;
+      color: #666666;
+      font-size: 0.8em;
+      line-height: 1.5;
+      padding: 6px 0; }
+
+@media screen and (min-width: 820px) {
+  .services .wrapper .service .detailed-services {
+    display: grid;
+    grid-template-rows: 1;
+    grid-auto-columns: minmax(min-content, 230px);
+    grid-auto-flow: column; }
+    .services .wrapper .service .detailed-services .item {
+      line-height: 90px;
+      position: relative;
+      max-height: 90px;
+      text-align: center;
+      padding: 0 10px;
+      align-content: center;
+      justify-content: center;
+      position: relative; }
+      .services .wrapper .service .detailed-services .item :after {
+        border-right: 1px solid #cccccc;
+        content: '';
+        position: absolute;
+        height: 50%;
+        bottom: 25%;
+        right: 0; }
+      .services .wrapper .service .detailed-services .item p {
+        display: inline-block;
+        vertical-align: middle; }
+    .services .wrapper .service .detailed-services .item:nth-child(1) :after {
+      border-left: 1px solid #cccccc;
+      content: '';
+      position: absolute;
+      height: 50%;
+      bottom: 25%;
+      left: 0; } }
+
+#contact .wrapper {
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 1em;
+  margin: 2em 0; }
+
+@media screen and (max-width: 800px) {
+  #contact .wrapper {
+    grid-template-columns: repeat(1, 1fr); } }
+
+.box {
+  margin: 1em;
+  padding: 0 1em;
+  transition: 1s; }
+
+/* content */
+.content {
+  overflow: auto;
+  width: 100%; }
+
+/* #home */
+/* #home > .logo */
+#home > .logo {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  bottom: 0%;
+  transition: all 1.5s; }
+  #home > .logo > img {
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block; }
+
+@media screen and (max-width: 760px) {
+  #home > .logo {
+    top: 50%;
+    bottom: 20%; } }
+
+#our-services {
+  text-align: center;
+  padding: 2em 0 0 0;
+  width: 100%; }
+  #our-services p {
+    padding: 6px 0; }
+
+/* gallery */
+.gallery {
+  margin-bottom: 1em;
+  position: relative; }
+  .gallery .scroll-gallery {
+    overflow: hidden;
+    white-space: nowrap; }
+    .gallery .scroll-gallery img {
+      height: 14em;
+      margin: 0;
+      padding: 0; }
+  .gallery .buttons {
+    width: calc(100% - 1em);
+    font-size: 2.8em;
+    position: absolute;
+    top: 40%;
+    z-index: 15;
+    color: white;
+    padding: 0 0.5em; }
+    .gallery .buttons .arrow {
+      cursor: pointer;
+      background-color: transparent; }
+    .gallery .buttons .scrollright {
+      float: right; }
+    .gallery .buttons .scrollleft {
+      float: left; }
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  grid-template-rows: 1; }
+
+/* contact */
+#contact .box {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 auto; }
+
+#contact i {
+  font-size: 1.5em; }
+
+#contact .map {
+  position: absolute;
+  bottom: -50px; }
+
+/* map and footer */
+.footer {
+  text-align: center;
+  padding: 0.25em 0;
+  font-size: 90%; }
+
+#contact-section {
+  position: relative; }
+  #contact-section .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
