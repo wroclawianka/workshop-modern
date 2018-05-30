@@ -228,32 +228,30 @@ h5 {
 
 /* gallery */
 .gallery {
-  height: 15em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   position: relative; }
-  .gallery img {
-    height: 14em;
-    margin: 0;
-    padding: 0; }
+  .gallery .scroll-gallery {
+    overflow: hidden;
+    white-space: nowrap; }
+    .gallery .scroll-gallery img {
+      height: 14em;
+      margin: 0;
+      padding: 0; }
   .gallery .buttons {
-    width: 80px;
+    width: calc(100% - 1em);
     font-size: 2.8em;
     position: absolute;
-    right: 50%;
-    bottom: 10px;
+    top: 40%;
     z-index: 15;
-    color: white; }
-  .gallery .arrow {
-    cursor: pointer;
-    background-color: transparent; }
-  .gallery .scrollright {
-    float: right; }
-  .gallery .scrollleft {
-    float: left; }
-
-.scroll-gallery {
-  overflow: hidden;
-  white-space: nowrap; }
+    color: white;
+    padding: 0 0.5em; }
+    .gallery .buttons .arrow {
+      cursor: pointer;
+      background-color: transparent; }
+    .gallery .buttons .scrollright {
+      float: right; }
+    .gallery .buttons .scrollleft {
+      float: left; }
 
 .images {
   display: grid;
@@ -277,7 +275,8 @@ h5 {
 /* map and footer */
 .footer {
   text-align: center;
-  padding: 0.25em 0; }
+  padding: 0.25em 0;
+  font-size: 90%; }
 
 #contact-section {
   position: relative; }

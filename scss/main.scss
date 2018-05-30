@@ -139,7 +139,8 @@
         transition: 1s;
         background-color: $black-transparent;
     }
-    .layer:hover{
+    
+    .layer:hover {
         background-color: transparent;
     }
     /* section */
@@ -233,7 +234,7 @@
         padding-bottom: $padding-default;
         margin: 2em 0;
     }
-
+    
     @media screen and (max-width: 800px) {
         #contact .wrapper {
             grid-template-columns: repeat(1, 1fr);
@@ -291,39 +292,37 @@
     /* gallery */
     
     .gallery {
-        height: 15em;
-        margin-bottom: 2em;
+        margin-bottom: 1em;
         position: relative;
-        img {
-            height: 14em;
-            margin: 0;
-            padding: 0;
+        .scroll-gallery {
+            overflow: hidden;
+            white-space: nowrap;
+            img {
+                height: 14em;
+                margin: 0;
+                padding: 0;
+            }
         }
         // buttons
         .buttons {
-            width: 80px;
+            width: calc(100% - 1em);
             font-size: 2.8em;
             position: absolute;
-            right: 50%;
-            bottom: 10px;
+            top: 40%;
             z-index: 15;
             color: white;
+            padding: 0 0.5em;
+            .arrow {
+                cursor: pointer;
+                background-color: transparent;
+            }
+            .scrollright {
+                float: right;
+            }
+            .scrollleft {
+                float: left;
+            }
         }
-        .arrow {
-            cursor: pointer;
-            background-color: transparent;
-        }
-        .scrollright {
-            float: right;
-        }
-        .scrollleft {
-            float: left;
-        }
-    }
-    
-    .scroll-gallery {
-        overflow: hidden;
-        white-space: nowrap;
     }
     
     .images {
@@ -348,12 +347,12 @@
             bottom: -50px;
         }
     }
-
     /* map and footer */
     
     .footer {
         text-align: center;
         padding: 0.25em 0;
+        font-size: 90%;
     }
     
     #contact-section {
