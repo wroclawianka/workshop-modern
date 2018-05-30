@@ -23,6 +23,16 @@ h4,
 h5 {
   font-family: "Merriweather", serif; }
 
+.header {
+  text-align: center;
+  padding: 0 0 1em 0; }
+  .header > h2,
+  .header h3 {
+    font-size: 240%;
+    font-weight: 100; }
+  .header > h3 {
+    font-size: 140%; }
+
 /* navigation */
 #navigation {
   position: fixed;
@@ -117,15 +127,6 @@ h5 {
   grid-template-columns: repeat(1, [col] 1fr);
   grid-template-rows: repeat(auto-fit, [row] auto);
   padding: 2em 0; }
-  .services .wrapper .service .header {
-    text-align: center;
-    padding: 0 0 1em 0; }
-    .services .wrapper .service .header > h2,
-    .services .wrapper .service .header h3 {
-      font-size: 240%;
-      font-weight: 100; }
-    .services .wrapper .service .header > h3 {
-      font-size: 140%; }
   .services .wrapper .service .emphasis {
     text-align: center;
     padding: 6px 0; }
@@ -175,7 +176,12 @@ h5 {
 
 #contact .wrapper {
   grid-template-columns: repeat(4, 1fr);
-  padding-bottom: 1em; }
+  padding-bottom: 1em;
+  margin: 2em 0; }
+
+@media screen and (max-width: 800px) {
+  #contact .wrapper {
+    grid-template-columns: repeat(1, 1fr); } }
 
 .box {
   margin: 1em;
@@ -203,6 +209,11 @@ h5 {
     margin-right: auto;
     margin-left: auto;
     display: block; }
+
+@media screen and (max-width: 760px) {
+  #home > .logo {
+    top: 50%;
+    bottom: 20%; } }
 
 #our-services {
   text-align: center;
@@ -248,7 +259,9 @@ h5 {
 /* contact */
 #contact .box {
   text-align: center;
-  width: 70%; }
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 auto; }
 
 #contact i {
   font-size: 1.5em; }
@@ -268,13 +281,3 @@ h5 {
     position: absolute;
     bottom: 0;
     width: 100%; }
-
-@media screen and (max-width: 760px) {
-  #home > .logo {
-    top: 50%;
-    bottom: 20%; }
-  #contact .wrapper {
-    grid-template-columns: repeat(1, 1fr); }
-  #contact .box {
-    margin: 0 auto;
-    padding: 0 auto; } }

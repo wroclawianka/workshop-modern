@@ -28,6 +28,19 @@
     h5 {
         font-family: $font-headers;
     }
+    
+    .header {
+        text-align: center;
+        padding: 0 0 $padding-default 0;
+        >h2,
+        h3 {
+            font-size: 240%;
+            font-weight: 100;
+        }
+        >h3 {
+            font-size: 140%;
+        }
+    }
     /* navigation */
     
     #navigation {
@@ -147,18 +160,18 @@
         grid-template-rows: repeat(auto-fit, [row] auto);
         padding: 2em 0;
         .service {
-            .header {
-                text-align: center;
-                padding: 0 0 $padding-default 0;
-                >h2,
-                h3 {
-                    font-size: 240%;
-                    font-weight: 100;
-                }
-                >h3 {
-                    font-size: 140%;
-                }
-            }
+            // .header {
+            //     text-align: center;
+            //     padding: 0 0 $padding-default 0;
+            //     >h2,
+            //     h3 {
+            //         font-size: 240%;
+            //         font-weight: 100;
+            //     }
+            //     >h3 {
+            //         font-size: 140%;
+            //     }
+            // }
             .emphasis {
                 text-align: center;
                 padding: 6px 0;
@@ -214,6 +227,13 @@
     #contact .wrapper {
         grid-template-columns: repeat(4, 1fr);
         padding-bottom: $padding-default;
+        margin: 2em 0;
+    }
+
+    @media screen and (max-width: 800px) {
+        #contact .wrapper {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
     
     .box {
@@ -246,6 +266,13 @@
                 margin-left: auto;
                 display: block;
             }
+        }
+    }
+    
+    @media screen and (max-width: 760px) {
+        #home>.logo {
+            top: 50%;
+            bottom: 20%;
         }
     }
     
@@ -306,6 +333,8 @@
         .box {
             text-align: center;
             width: 70%;
+            margin: 0 auto;
+            padding: 0 auto;
         }
         i {
             font-size: 1.5em;
@@ -315,6 +344,7 @@
             bottom: -50px;
         }
     }
+
     /* map and footer */
     
     .footer {
@@ -329,20 +359,4 @@
             bottom: 0;
             width: 100%;
         }
-    }
-    
-    @media screen and (max-width: 760px) {
-            #home>.logo {
-                top: 50%;
-                bottom: 20%;
-            }
-            #contact {
-                .wrapper {
-                    grid-template-columns: repeat(1, 1fr);
-                }
-                .box {
-                    margin: 0 auto;
-                    padding: 0 auto;
-                }
-            }
     }
