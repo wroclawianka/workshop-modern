@@ -277,6 +277,8 @@ h5 {
   text-align: center;
   padding: 0.25em 0;
   font-size: 90%; }
+  .footer a:hover {
+    font-weight: bold; }
 
 #contact-section {
   position: relative; }
