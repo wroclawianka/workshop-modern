@@ -1,11 +1,3 @@
-// $(function() {
-//     adjustBodyToWidth();
-// });
-
-// window.onresize = function(event) {
-//     adjustBodyToWidth();
-// };
-
 $('.scrollleft').click(function() {
     scrollGallery(this, '-=400')
 });
@@ -13,11 +5,6 @@ $('.scrollleft').click(function() {
 $('.scrollright').click(function() {
     scrollGallery(this, '+=400')
 });
-
-//adjusting elements to width of window
-// function adjustBodyToWidth() {
-//     adjustElementToWidth("body", "short", 760);
-// }
 
 //smooth page scrolling
 $('a[href*="#"]').click(function(event) {
