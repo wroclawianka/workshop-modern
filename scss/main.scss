@@ -163,7 +163,8 @@
         width: 100%;
         grid-template-columns: repeat(1, [col] 1fr);
         grid-template-rows: repeat(auto-fit, [row] auto);
-        padding: 2em 0;
+        // padding: 2em 0;
+        max-width: 1000px;
         .service {
             .emphasis {
                 text-align: center;
