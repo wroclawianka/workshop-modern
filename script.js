@@ -1,63 +1,71 @@
-const galleryPath = './assets/gallery/';
+class Picture {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+        this.src = `./assets/gallery/${name}`;
+    }
+}
+
+// const galleryPath = './assets/gallery/';
 const gallery = $('.gallery');
 const images = gallery.find('.images');
-const pictures = [
-    'IMG_7942.JPG',
-    'IMG_7960.JPG',
-    'IMG_7965.JPG',
-    'IMG_8050.JPG',
-    'IMG_0002.JPG',
-    'IMG_0004.JPG',
-    'IMG_0001.JPG',
-    'IMG_0003.JPG',
-    'IMG_7947.JPG',
-    'IMG_8037.JPG'
-];
+const pictures = Array(
+    new Picture(1, 'IMG_7942.JPG'),
+    new Picture(2, 'IMG_7960.JPG'),
+    new Picture(3, 'IMG_7965.JPG'),
+    new Picture(4, 'IMG_8050.JPG'),
+    new Picture(5, 'IMG_0002.JPG'),
+    new Picture(6, 'IMG_0004.JPG'),
+    new Picture(7, 'IMG_0001.JPG'),
+    new Picture(8, 'IMG_0003.JPG'),
+    new Picture(9, 'IMG_7947.JPG'),
+    new Picture(10, 'IMG_8037.JPG'),
+)
 let galleryItems = [];
+let currentPictureId;
 
-(function () {
+(function() {
     createGallery(pictures);
 })();
 
-function generateHTML(element){
-    const src = galleryPath + element
-    const html = `<img class="gallery_item" src="${src}" alt="">`;
+function generateHTML(picture) {
+    const src = picture.src;
+    const html = `<img class="gallery_item" src="${src}" alt="" picture_id="${picture.id}">`;
     galleryItems.push(html);
 }
 
-function createGallery(items){
-    pictures.forEach(generateHTML);
-    // galleryItems.join("");
+function createGallery(items) {
+    pictures.forEach(picture => generateHTML(picture));
     images.html(galleryItems.join(""));
 }
 
 // smooth page scrolling
-$('a[href*="#"]').click(function (event) {
-  var target = $(this.hash)
-  if (target.length) {
-    event.preventDefault()
-    $('html, body').animate({
-      scrollTop: target.offset().top - 50
-    }, 1000, function () {})
-  }
+$('a[href*="#"]').click(function(event) {
+    var target = $(this.hash)
+    if (target.length) {
+        event.preventDefault()
+        $('html, body').animate({
+            scrollTop: target.offset().top - 50
+        }, 1000, function() {})
+    }
 })
 
 // gallery scrolling
-$('.scrollleft').click(function () {
-  scrollGallery(this, '-=400')
+$('.scrollleft').click(function() {
+    scrollGallery(this, '-=400')
 })
 
-$('.scrollright').click(function () {
-  scrollGallery(this, '+=400')
+$('.scrollright').click(function() {
+    scrollGallery(this, '+=400')
 })
 
-function scrollGallery (element, value) {
-  var gallery = $(element).parents('.gallery')
-  var scrollGallery = gallery.children('.scroll-gallery')
+function scrollGallery(element, value) {
+    var gallery = $(element).parents('.gallery')
+    var scrollGallery = gallery.children('.scroll-gallery')
 
-  scrollGallery.animate({
-    scrollLeft: value
-  }, 500, 'easeOutQuad')
+    scrollGallery.animate({
+        scrollLeft: value
+    }, 500, 'easeOutQuad')
 }
 
 // gallery overlay
@@ -70,12 +78,36 @@ $('.gallery_item').bind('click', openOverlay)
 
 overlayClose.on('click', closeOverlay)
 
-function openOverlay () {
-  const src = $(this).attr('src')
-  overlayImage.attr('src', src)
-  overlay.addClass('open')
+function openOverlay() {
+    currentPictureId = $(this).attr('picture_id');
+    const src = $(this).attr('src')
+    overlayImage.attr('src', src)
+    overlay.addClass('open')
 }
 
-function closeOverlay () {
-  overlay.removeClass('open')
+function closeOverlay() {
+    overlay.removeClass('open')
+}
+
+//gallery overlay - next, prev picture
+const prevPicture = overlay.find('.prev-picture');
+const nextPicture = overlay.find('.next-picture');
+
+prevPicture.on('click', showPrevPicture);
+nextPicture.on('click', showNextPicture);
+
+function showPrevPicture() {
+    const id = (currentPictureId > 1) ? (currentPictureId - 1) : pictures.length;
+    showPicture(id);
+}
+
+function showNextPicture() {
+    const id = (currentPictureId < pictures.length) ? (currentPictureId + 1) : 1;
+    showPicture(id);
+}
+
+function showPicture(id) {
+    currentPictureId = id;
+    let picture = pictures.find(pic => pic.id === currentPictureId);
+    overlayImage.attr('src', picture.src);
 }
