@@ -1,11 +1,3 @@
-$('.scrollleft').click(function () {
-  scrollGallery(this, '-=400')
-})
-
-$('.scrollright').click(function () {
-  scrollGallery(this, '+=400')
-})
-
 // smooth page scrolling
 $('a[href*="#"]').click(function (event) {
   var target = $(this.hash)
@@ -18,6 +10,14 @@ $('a[href*="#"]').click(function (event) {
 })
 
 // gallery scrolling
+$('.scrollleft').click(function () {
+  scrollGallery(this, '-=400')
+})
+
+$('.scrollright').click(function () {
+  scrollGallery(this, '+=400')
+})
+
 function scrollGallery (element, value) {
   var gallery = $(element).parents('.gallery')
   var scrollGallery = gallery.children('.scroll-gallery')
@@ -31,7 +31,11 @@ function scrollGallery (element, value) {
 const overlay = $('.overlay')
 const overlayImage = $('.overlay').find('img')
 const overlayClose = overlay.find('.close')
-let picture
+
+const items = $('.gallery_item')
+$('.gallery_item').bind('click', openOverlay)
+
+overlayClose.on('click', closeOverlay)
 
 function openOverlay () {
   const src = $(this).attr('src')
@@ -42,8 +46,3 @@ function openOverlay () {
 function closeOverlay () {
   overlay.removeClass('open')
 }
-
-const items = $('.gallery_item')
-$('.gallery_item').bind('click', openOverlay)
-
-overlayClose.on('click', closeOverlay)
