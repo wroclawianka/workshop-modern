@@ -258,6 +258,35 @@ h5 {
   grid-template-columns: repeat(10, auto);
   grid-template-rows: 1; }
 
+/* gallery overlay */
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 2; }
+  .overlay img {
+    width: 100%; }
+
+.overlay.open {
+  display: grid;
+  align-items: center;
+  justify-items: center; }
+
+.overlay-inner {
+  background: #000000;
+  width: 700px;
+  padding: 10px;
+  padding-top: 4px; }
+
+.close {
+  background: none;
+  color: #4d4d4d;
+  border: 0; }
+
 /* contact */
 #contact .box {
   text-align: center;
