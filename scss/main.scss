@@ -223,6 +223,12 @@
         padding-bottom: $padding-default;
         margin: 2em 0;
     }
+
+    @media screen and (max-width: 1250px) {
+        #contact .wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
     
     @media screen and (max-width: 800px) {
         #contact .wrapper {
