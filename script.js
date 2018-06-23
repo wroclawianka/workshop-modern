@@ -6,9 +6,6 @@ class Picture {
     }
 }
 
-// const galleryPath = './assets/gallery/';
-const gallery = $('.gallery');
-const images = gallery.find('.images');
 const pictures = Array(
     new Picture(1, 'IMG_7942.JPG'),
     new Picture(2, 'IMG_7960.JPG'),
@@ -21,6 +18,8 @@ const pictures = Array(
     new Picture(9, 'IMG_7947.JPG'),
     new Picture(10, 'IMG_8037.JPG'),
 )
+const gallery = $('.gallery');
+const images = gallery.find('.images');
 let galleryItems = [];
 let currentPictureId;
 
@@ -29,8 +28,7 @@ let currentPictureId;
 })();
 
 function generateHTML(picture) {
-    const src = picture.src;
-    const html = `<img class="gallery_item" src="${src}" alt="" picture_id="${picture.id}">`;
+    const html = `<img class="gallery_item" src="${picture.src}" alt="" picture_id="${picture.id}">`;
     galleryItems.push(html);
 }
 
