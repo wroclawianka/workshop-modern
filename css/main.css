@@ -284,8 +284,10 @@ h5 {
 
 .close {
   background: none;
-  color: #4d4d4d;
-  border: 0; }
+  color: #cccccc;
+  border: 0;
+  padding-bottom: 6px;
+  float: right; }
 
 /* contact */
 #contact .box {
