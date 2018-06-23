@@ -27,23 +27,23 @@ function scrollGallery (element, value) {
   }, 500, 'easeOutQuad')
 }
 
-// gallery
-const overlay = document.querySelector('.overlay');
-const overlayImage = overlay.querySelector('img');
-const overlayClose = overlay.querySelector('.close');
+// gallery overlay
+const overlay = $('.overlay')
+const overlayImage = $('.overlay').find('img')
+const overlayClose = overlay.find('.close')
+let picture
 
-function handleClick (e) {
-  const src = e.currentTarget.src
-  overlayImage.src = src
-  overlay.classList.add('open')
+function openOverlay () {
+  const src = $(this).attr('src')
+  overlayImage.attr('src', src)
+  overlay.addClass('open')
 }
 
-function close () {
-  overlay.classList.remove('open')
+function closeOverlay () {
+  overlay.removeClass('open')
 }
 
-const items = document.querySelectorAll('.gallery_item');
+const items = $('.gallery_item')
+$('.gallery_item').bind('click', openOverlay)
 
-items.forEach(item => item.addEventListener('click', handleClick));
-
-overlayClose.addEventListener('click', close);
+overlayClose.on('click', closeOverlay)
