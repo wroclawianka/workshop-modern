@@ -1,3 +1,36 @@
+const galleryPath = './assets/gallery/';
+const gallery = $('.gallery');
+const images = gallery.find('.images');
+const pictures = [
+    'IMG_7942.JPG',
+    'IMG_7960.JPG',
+    'IMG_7965.JPG',
+    'IMG_8050.JPG',
+    'IMG_0002.JPG',
+    'IMG_0004.JPG',
+    'IMG_0001.JPG',
+    'IMG_0003.JPG',
+    'IMG_7947.JPG',
+    'IMG_8037.JPG'
+];
+let galleryItems = [];
+
+(function () {
+    createGallery(pictures);
+})();
+
+function generateHTML(element){
+    const src = galleryPath + element
+    const html = `<img class="gallery_item" src="${src}" alt="">`;
+    galleryItems.push(html);
+}
+
+function createGallery(items){
+    pictures.forEach(generateHTML);
+    // galleryItems.join("");
+    images.html(galleryItems.join(""));
+}
+
 // smooth page scrolling
 $('a[href*="#"]').click(function (event) {
   var target = $(this.hash)
@@ -29,7 +62,7 @@ function scrollGallery (element, value) {
 
 // gallery overlay
 const overlay = $('.overlay')
-const overlayImage = $('.overlay').find('img')
+const overlayImage = overlay.find('img')
 const overlayClose = overlay.find('.close')
 
 const items = $('.gallery_item')
