@@ -286,42 +286,54 @@
         .scroll-gallery {
             overflow: hidden;
             white-space: nowrap;
+            position: relative;
+            padding: 1em 0;
             img {
-                height: 14em;
+                cursor: pointer;
+                height: 19em;
                 margin: 0;
                 padding: 0;
             }
         }
         // buttons
-        .buttons {
-            width: calc(100% - 1em);
-            font-size: 2.8em;
+        .button {
             position: absolute;
             top: 40%;
-            z-index: 15;
-            color: white;
-            padding: 0 0.5em;
             .arrow {
                 cursor: pointer;
                 background-color: transparent;
-            }
-            .scrollright {
-                float: right;
-            }
-            .scrollleft {
-                float: left;
-            }
+                font-size: 4.5em;
+                z-index: 15;
+                color: white;
+                padding: 0 0.5em;
         }
-        .facebook{
+    }
+
+        .button.right{
+            right: 0;
+        }
+
+        .button.left{
+            left: 0;
+        }
+
+        .facebook {
             text-align: center;
             padding: 20px 0 10px 0;
-            span:hover{
+            font-size: 140%;
+            span:hover {
                 text-decoration: underline;
             }
-            i{
+            i {
                 color: $blue-facebook;
-                font-size: 120%;
+                font-size: 160%;
             }
+        }
+    }
+
+    @media screen and (max-width: 850px) {
+        .gallery{
+            display: none;
         }
     }
     
@@ -350,19 +362,21 @@
         display: grid;
         align-items: center;
         justify-items: center;
+        z-index: 20;
     }
     
     .overlay-inner {
         position: absolute;
         width: 700px;
+        padding: 0 50px;
     }
     
     .buttons_overlay {
-        width: calc(100% + 3.4em);
+        width: calc(100% - 1em);
         position: absolute;
         top: 40%;
-        right: -1.8em;
-        left: -1.8em;
+        left: 0.5em;
+        right: 0.5em;
     }
     
     .button_overlay {
@@ -372,27 +386,31 @@
         cursor: pointer;
     }
     
-    
     .close {
         background: none;
         color: white;
         border: 0;
         float: right;
         cursor: pointer;
-        font-size: 1.5em;
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 5px;
+        right: 30px;
+        transform: rotate(45deg);
+        font-size: 5em;
     }
     
     .button_overlay.array {
-        font-size: 2.8em;
+        font-size: 4.5em;
     }
-
-    .prev_picture{
+    
+    .button_overlay.array:focus {
+        outline: 0;
+    }
+    
+    .prev_picture {
         float: left;
     }
-
+    
     .next-picture {
         float: right;
     }

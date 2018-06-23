@@ -232,34 +232,41 @@ h5 {
   position: relative; }
   .gallery .scroll-gallery {
     overflow: hidden;
-    white-space: nowrap; }
+    white-space: nowrap;
+    position: relative;
+    padding: 1em 0; }
     .gallery .scroll-gallery img {
-      height: 14em;
+      cursor: pointer;
+      height: 19em;
       margin: 0;
       padding: 0; }
-  .gallery .buttons {
-    width: calc(100% - 1em);
-    font-size: 2.8em;
+  .gallery .button {
     position: absolute;
-    top: 40%;
-    z-index: 15;
-    color: white;
-    padding: 0 0.5em; }
-    .gallery .buttons .arrow {
+    top: 40%; }
+    .gallery .button .arrow {
       cursor: pointer;
-      background-color: transparent; }
-    .gallery .buttons .scrollright {
-      float: right; }
-    .gallery .buttons .scrollleft {
-      float: left; }
+      background-color: transparent;
+      font-size: 4.5em;
+      z-index: 15;
+      color: white;
+      padding: 0 0.5em; }
+  .gallery .button.right {
+    right: 0; }
+  .gallery .button.left {
+    left: 0; }
   .gallery .facebook {
     text-align: center;
-    padding: 20px 0 10px 0; }
+    padding: 20px 0 10px 0;
+    font-size: 140%; }
     .gallery .facebook span:hover {
       text-decoration: underline; }
     .gallery .facebook i {
       color: #3b5998;
-      font-size: 120%; }
+      font-size: 160%; }
+
+@media screen and (max-width: 850px) {
+  .gallery {
+    display: none; } }
 
 .images {
   display: grid;
@@ -282,18 +289,20 @@ h5 {
 .overlay.open {
   display: grid;
   align-items: center;
-  justify-items: center; }
+  justify-items: center;
+  z-index: 20; }
 
 .overlay-inner {
   position: absolute;
-  width: 700px; }
+  width: 700px;
+  padding: 0 50px; }
 
 .buttons_overlay {
-  width: calc(100% + 3.4em);
+  width: calc(100% - 1em);
   position: absolute;
   top: 40%;
-  right: -1.8em;
-  left: -1.8em; }
+  left: 0.5em;
+  right: 0.5em; }
 
 .button_overlay {
   background: none;
@@ -307,13 +316,17 @@ h5 {
   border: 0;
   float: right;
   cursor: pointer;
-  font-size: 1.5em;
   position: absolute;
-  top: 15px;
-  right: 15px; }
+  top: 5px;
+  right: 30px;
+  transform: rotate(45deg);
+  font-size: 5em; }
 
 .button_overlay.array {
-  font-size: 2.8em; }
+  font-size: 4.5em; }
+
+.button_overlay.array:focus {
+  outline: 0; }
 
 .prev_picture {
   float: left; }

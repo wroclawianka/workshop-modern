@@ -44,17 +44,17 @@ $('a[href*="#"]').click(function(event) {
         event.preventDefault()
         $('html, body').animate({
             scrollTop: target.offset().top - 50
-        }, 1000, function() {})
+        }, 1500, function() {})
     }
 })
 
 // gallery scrolling
 $('.scrollleft').click(function() {
-    scrollGallery(this, '-=400')
+    scrollGallery(this, '-=600')
 })
 
 $('.scrollright').click(function() {
-    scrollGallery(this, '+=400')
+    scrollGallery(this, '+=600')
 })
 
 function scrollGallery(element, value) {
@@ -80,16 +80,6 @@ $(document).keyup(function(e) {
     if (e.keyCode === 27) overlayClose.click();
 });
 
-$('.overlay').on('click', function(e) {
-    var $currEl = $(e.currentTarget);
-    if (!$currEl.is('.overlay-inner')) {    
-        closeOverlay();
-    } else {
-        console.log(222);       
-        openOverlay();
-    }
-});
-
 function openOverlay() {
     currentPictureId = $(this).attr('picture_id');
     const src = $(this).attr('src')
@@ -107,14 +97,15 @@ const nextPicture = overlay.find('.next-picture');
 
 prevPicture.on('click', showPrevPicture);
 nextPicture.on('click', showNextPicture);
+overlayImage.on('click', showNextPicture);
 
 function showPrevPicture() {
-    const id = (currentPictureId > 1) ? (currentPictureId - 1) : pictures.length;
+    const id = (currentPictureId > 1) ? (parseInt(currentPictureId) - 1) : pictures.length;
     showPicture(id);
 }
 
 function showNextPicture() {
-    const id = (currentPictureId < pictures.length) ? (currentPictureId + 1) : 1;
+    const id = (currentPictureId < pictures.length) ? (parseInt(currentPictureId) + 1) : 1;
     showPicture(id);
 }
 
