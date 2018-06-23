@@ -71,10 +71,24 @@ const overlay = $('.overlay')
 const overlayImage = overlay.find('img')
 const overlayClose = overlay.find('.close')
 
-const items = $('.gallery_item')
-$('.gallery_item').bind('click', openOverlay)
+const items = $('.gallery_item');
+items.bind('click', openOverlay);
 
 overlayClose.on('click', closeOverlay)
+
+$(document).keyup(function(e) {
+    if (e.keyCode === 27) overlayClose.click();
+});
+
+$('.overlay').on('click', function(e) {
+    var $currEl = $(e.currentTarget);
+    if (!$currEl.is('.overlay-inner')) {    
+        closeOverlay();
+    } else {
+        console.log(222);       
+        openOverlay();
+    }
+});
 
 function openOverlay() {
     currentPictureId = $(this).attr('picture_id');
