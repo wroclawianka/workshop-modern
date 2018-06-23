@@ -323,7 +323,7 @@
     
     .overlay {
         position: fixed;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.8);
         top: 0;
         right: 0;
         bottom: 0;
@@ -342,17 +342,47 @@
     }
     
     .overlay-inner {
-        background: $black;
+        position: absolute;
         width: 700px;
-        padding: 10px;
-        padding-top: 4px;
     }
+    
+    .buttons_overlay {
+        width: calc(100% + 3.4em);
+        position: absolute;
+        top: 40%;
+        right: -1.8em;
+        left: -1.8em;
+    }
+    
+    .button_overlay {
+        background: none;
+        color: white;
+        border: 0;
+        cursor: pointer;
+    }
+    
     
     .close {
         background: none;
-        color: $grey-light;
+        color: white;
         border: 0;
-        padding-bottom: 6px;
+        float: right;
+        cursor: pointer;
+        font-size: 1.5em;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .button_overlay.array {
+        font-size: 2.8em;
+    }
+
+    .prev_picture{
+        float: left;
+    }
+
+    .next-picture {
         float: right;
     }
     /* contact */
