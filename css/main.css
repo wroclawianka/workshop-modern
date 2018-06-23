@@ -300,15 +300,12 @@ h5 {
   position: absolute;
   width: 700px;
   padding: 0 50px; }
-
-.buttons_overlay {
-  width: calc(100% - 1em);
-  position: absolute;
-  top: 40%;
-  left: 0.5em;
-  right: 0.5em; }
+  .overlay-inner img {
+    cursor: pointer; }
 
 .button_overlay {
+  position: absolute;
+  top: 40%;
   background: none;
   color: white;
   border: 0;
@@ -326,17 +323,17 @@ h5 {
   transform: rotate(45deg);
   font-size: 5em; }
 
-.button_overlay.array {
+.button_overlay {
   font-size: 4.5em; }
 
-.button_overlay.array:focus {
+.button_overlay:focus {
   outline: 0; }
 
-.prev_picture {
-  float: left; }
+.prev-picture {
+  left: 0; }
 
 .next-picture {
-  float: right; }
+  right: 0; }
 
 /* contact */
 #contact .box {
