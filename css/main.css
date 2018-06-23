@@ -130,7 +130,7 @@ h5 {
   width: 100%;
   grid-template-columns: repeat(1, [col] 1fr);
   grid-template-rows: repeat(auto-fit, [row] auto);
-  padding: 2em 0; }
+  max-width: 1000px; }
   .services .wrapper .service .emphasis {
     text-align: center;
     padding: 6px 0; }
@@ -183,6 +183,10 @@ h5 {
   padding-bottom: 1em;
   margin: 2em 0; }
 
+@media screen and (max-width: 1250px) {
+  #contact .wrapper {
+    grid-template-columns: repeat(2, 1fr); } }
+
 @media screen and (max-width: 800px) {
   #contact .wrapper {
     grid-template-columns: repeat(1, 1fr); } }
@@ -232,31 +236,104 @@ h5 {
   position: relative; }
   .gallery .scroll-gallery {
     overflow: hidden;
-    white-space: nowrap; }
+    white-space: nowrap;
+    position: relative;
+    padding: 1em 0; }
     .gallery .scroll-gallery img {
-      height: 14em;
+      cursor: pointer;
+      height: 19em;
       margin: 0;
       padding: 0; }
-  .gallery .buttons {
-    width: calc(100% - 1em);
-    font-size: 2.8em;
+  .gallery .button {
     position: absolute;
-    top: 40%;
-    z-index: 15;
-    color: white;
-    padding: 0 0.5em; }
-    .gallery .buttons .arrow {
+    top: 40%; }
+    .gallery .button .arrow {
       cursor: pointer;
-      background-color: transparent; }
-    .gallery .buttons .scrollright {
-      float: right; }
-    .gallery .buttons .scrollleft {
-      float: left; }
+      background-color: transparent;
+      font-size: 4.5em;
+      z-index: 15;
+      color: white;
+      padding: 0 0.5em; }
+  .gallery .button.right {
+    right: 0; }
+  .gallery .button.left {
+    left: 0; }
+  .gallery .facebook {
+    text-align: center;
+    padding: 20px 0 10px 0;
+    font-size: 140%; }
+    .gallery .facebook span:hover {
+      text-decoration: underline; }
+    .gallery .facebook i {
+      color: #3b5998;
+      font-size: 160%; }
+
+@media screen and (max-width: 850px) {
+  .gallery {
+    display: none; } }
 
 .images {
   display: grid;
   grid-template-columns: repeat(10, auto);
   grid-template-rows: 1; }
+
+/* gallery overlay */
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 2; }
+  .overlay img {
+    width: 100%; }
+
+.overlay.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  z-index: 20; }
+
+.overlay-inner {
+  position: absolute;
+  width: 700px;
+  padding: 0 50px; }
+  .overlay-inner img {
+    cursor: pointer; }
+
+.button_overlay {
+  position: absolute;
+  top: 40%;
+  background: none;
+  color: white;
+  border: 0;
+  cursor: pointer; }
+
+.close {
+  background: none;
+  color: white;
+  border: 0;
+  float: right;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  transform: rotate(45deg);
+  font-size: 5em; }
+
+.button_overlay {
+  font-size: 4.5em; }
+
+.button_overlay:focus {
+  outline: 0; }
+
+.prev-picture {
+  left: 0; }
+
+.next-picture {
+  right: 0; }
 
 /* contact */
 #contact .box {
@@ -277,6 +354,8 @@ h5 {
   text-align: center;
   padding: 0.25em 0;
   font-size: 90%; }
+  .footer a:hover {
+    font-weight: bold; }
 
 #contact-section {
   position: relative; }
