@@ -252,6 +252,14 @@ h5 {
       float: right; }
     .gallery .buttons .scrollleft {
       float: left; }
+  .gallery .facebook {
+    text-align: center;
+    padding: 20px 0 10px 0; }
+    .gallery .facebook span:hover {
+      text-decoration: underline; }
+    .gallery .facebook i {
+      color: #3b5998;
+      font-size: 120%; }
 
 .images {
   display: grid;

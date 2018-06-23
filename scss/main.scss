@@ -312,6 +312,17 @@
                 float: left;
             }
         }
+        .facebook{
+            text-align: center;
+            padding: 20px 0 10px 0;
+            span:hover{
+                text-decoration: underline;
+            }
+            i{
+                color: $blue-facebook;
+                font-size: 120%;
+            }
+        }
     }
     
     .images {
